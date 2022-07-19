@@ -123,10 +123,12 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="img/Rubik2.jpg" class="card-img-top" alt="Rubik2">
+                        <img src="img/kalkulator.png" class="card-img-top" alt="kalkulator">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">Kalkulator</h5>
+                            <p class="card-text">Kalkulator sederhana menggunakan html, css, js</p>
+                            <a href="Kalkulator/index.html" class="btn btn-primary">Klik di sini jika
+                                ingin mencoba</a>
                         </div>
                     </div>
                 </div>

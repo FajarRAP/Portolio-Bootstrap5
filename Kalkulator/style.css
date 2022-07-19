@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.gridContainer {
+    margin: 50px auto;
+    width: 290px;
+    background-color: rgb(35, 0, 32);
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 30px;
+    display: grid;
+    grid-template-areas: "isian isian isian hapus";
+    grid-template-columns: repeat(3, 80px) 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    color: white;
+}
+
+.item input {
+    background-color: rgb(177, 38, 185);
+    border-radius: 10px;
+}
+
+.hasil {
+    grid-area: isian;
+}
+
+.hapus {
+    grid-area: hapus;
+}
+
+.item.hasil input {
+    background-color: rgb(236, 227, 227);
+    color: black;
+}
+
+.item.hapus input {
+    background-color: red;
+}
+
+.item.samadengan input {
+    background-color: red;
+}

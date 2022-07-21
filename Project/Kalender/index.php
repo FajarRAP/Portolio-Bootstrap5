@@ -79,16 +79,21 @@
                     }
                     
                 echo"</div>";
+                $hariIni=date('d');                
                 for($a=$ketemu; $a<=$jmlHari; $a++){
                     if(date('w', mktime(0,0,0,$kalender[1], $a, $kalender[2]))==1){
                         echo "<div class='row justify-content-evenly text-center'>";                
                     }
-                    $warnaTeks="text-dark";                
+                    $warnaTeks="text-dark";      
+                    $warnaBg="bg-success";      
                     if(date("l", mktime(0,0,0,$kalender[1],$a,$kalender[2]))=="Sunday"){
                         $warnaTeks="text-danger";                    
-
                     }
-                    echo "<div class='col-1 border mb-3 $warnaTeks rounded'><p class='m-2 fs-1'>$a</p></div>";        
+                    if($a==$hariIni){
+                        $warnaTeks="text-success";
+                        $warnaBg="bg-warning";
+                    }
+                    echo "<div class='col-1 border mb-3 $warnaTeks $warnaBg rounded'><p class='m-2 fs-1'>$a</p></div>";        
                     if(date('w', mktime(0,0,0,$kalender[1], $a, $kalender[2]))==0){
                         echo "</div>";
                     }            

@@ -34,8 +34,8 @@
                 <div class="col-1 mt-3">
                     <p class="text-white">Sabtu</p>
                 </div>
-                <div class="col-1 mt-3 text-danger">
-                    <p>Minggu</p>
+                <div class="col-1 mt-3">
+                    <p class="text-danger">Minggu</p>
                 </div>
             </div>
             <?php
@@ -63,23 +63,29 @@
                         $jadikanMinggu=2;
                         break;
                 }
-                echo "<div class='row justify-content-evenly text-center'>";
+                echo "<div class='row justify-content-evenly text-center'>";    
+                $hariIni=date('j', mktime(0,0,0,7,3,2022));
                 $ketemu=1;
                     for($a=1; $a<=7; $a++){
                         if($a<$hariPertama){
                             echo "<div class='col-1 mb-3'><p> </p></div>";
-                        }elseif($a>=$hariPertama){                
-                            if(date('l', mktime(0,0,0,$kalender[1], $a+$jadikanMinggu, $kalender[2]))=="Sunday"){                                
-                                echo "<div class='col-1 text-center border mb-3 text-danger rounded'><p class='m-2 fs-1'>$ketemu</p></div>";
+                        }elseif($a>=$hariPertama){    
+                            $warnaTeks="text-dark";      
+                            $warnaBg="bg-success";            
+                            if($ketemu==$hariIni){
+                                $warnaTeks="text-success";
+                                $warnaBg="bg-warning";
+                                echo "<div class='col-1 text-center border mb-3 $warnaTeks $warnaBg rounded'><p class='m-2 fs-1'>$ketemu</p></div>";
+                            }elseif(date('l', mktime(0,0,0,$kalender[1], $a+$jadikanMinggu, $kalender[2]))=="Sunday"){                                
+                                echo "<div class='col-1 text-center border mb-3 text-danger $warnaBg rounded'><p class='m-2 fs-1'>$ketemu</p></div>";
                             }else{
-                                echo "<div class='col-1 text-center border mb-3 rounded'><p class='m-2 fs-1'>$ketemu</p></div>";
+                                echo "<div class='col-1 text-center border mb-3 $warnaTeks $warnaBg rounded'><p class='m-2 fs-1'>$ketemu</p></div>";
                             }
                             $ketemu++;
                         }
                     }
-                    
+                
                 echo"</div>";
-                $hariIni=date('d');                
                 for($a=$ketemu; $a<=$jmlHari; $a++){
                     if(date('w', mktime(0,0,0,$kalender[1], $a, $kalender[2]))==1){
                         echo "<div class='row justify-content-evenly text-center'>";                
